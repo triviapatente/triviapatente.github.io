@@ -210,9 +210,9 @@ p.lead {
 }
 .bg-gradient {
     background-color: #024ba8;
-    background: -moz-linear-gradient(135deg, #024ba8 0%, #00a3f6fc 100%);
-    background: -webkit-linear-gradient(135deg, #024ba8 0%, #00a3f6fc 100%);
-    background: linear-gradient(135deg, #024ba8 0%, #00a3f6fc 100%); /* #045ac9 */
+    background: -moz-linear-gradient(135deg, #024ba8 0%, #00a3f6 100%);
+    background: -webkit-linear-gradient(135deg, #024ba8 0%, #00a3f6 100%);
+    background: linear-gradient(135deg, #024ba8 0%, #00a3f6 100%); /* #045ac9 */
 }
 
 .nav-menu.is-scrolling {
