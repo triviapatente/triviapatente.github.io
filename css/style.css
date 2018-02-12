@@ -209,10 +209,10 @@ p.lead {
     box-shadow: 0px 5px 23px 0px rgba(0, 0, 0, 0.1);
 }
 .bg-gradient {
-    background-color: #024ba8;
-    background: -moz-linear-gradient(135deg, #024ba8 0%, #00a3f6 100%);
-    background: -webkit-linear-gradient(135deg, #024ba8 0%, #00a3f6 100%);
-    background: linear-gradient(135deg, #024ba8 0%, #00a3f6 100%); /* #045ac9 */
+    background-color: rgb(2,75,168);
+    background: -moz-linear-gradient(135deg, rgb(2, 75, 168) 0%, rgb(0, 163, 246) 100%);
+    background: -webkit-linear-gradient(135deg, rgb(2, 75, 168) 0%, rgb(0, 163, 246) 100%);
+    background: linear-gradient(135deg, rgb(2, 75, 168) 0%, rgb(0, 163, 246) 100%); /* #045ac9 */
 }
 
 .nav-menu.is-scrolling {
