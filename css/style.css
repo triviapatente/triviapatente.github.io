@@ -95,7 +95,10 @@ p.lead {
 .light-font {
     font-weight: 300;
 }
-
+#service-title {
+    width: 130px;
+    height: auto;
+}
 .btn {
     font-size: 12px;
     font-weight: 400;
