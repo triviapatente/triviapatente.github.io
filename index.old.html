@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<!--
+
+Page    : index / TriviaPatente
+Version : 1.0
+Author  : Colorlib
+URI     : https://colorlib.com
+
+ -->
+
+<head>
+    <title>TriviaPatente</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Sfida i tuoi amici sui quiz della patente!">
+    <meta name="keywords" content="triviapatente, trivia patente, patente b, patente guida, guida, esame, quiz, auto, trivia, game, challenge, friends, teoria, quiz app">
+
+    <!-- Font -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Themify Icons -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- Owl carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- Main css -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="30">
+
+    <!-- Nav Menu -->
+
+    <div class="nav-menu fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-dark navbar-expand-lg">
+                        <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="img-fluid" alt="logo"></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                        <div class="collapse navbar-collapse" id="navbar">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item"> <a class="nav-link active" href="#home">HOME <span class="sr-only">(current)</span></a> </li>
+                                <li class="nav-item"> <a class="nav-link" href="#features">SCOPRI</a> </li>
+                                <li class="nav-item"> <a class="nav-link" href="#usage">UTILIZZO</a> </li>
+                                <li class="nav-item"> <a class="nav-link" href="#gallery">GALLERIA</a> </li>
+                                <li class="nav-item"> <a class="nav-link" href="#numbers">NUMERI</a> </li>
+                                <li class="nav-item"> <a class="nav-link" href="#testimonials">TESTIMONIANZE</a> </li>
+                                <li class="nav-item"> <a class="nav-link" href="#contact">CONTATTI</a> </li>
+                                <li class="nav-item"><a href="#download" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3">Scarica</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <header class="bg-gradient" id="home">
+        <div class="container mt-5">
+            <h1>Gioca, divertiti e impara</h1>
+            <p class="tagline">Sfida i tuoi amici e studia per la patente B, ti preparerai all'esame di teoria senza accorgertene <i class="em em-grinning_face_with_star_eyes"></i></p>
+        </div>
+        <div class="img-holder mt-3"><img src="images/home.png" alt="Pagina principale" class="img-fluid"></div>
+    </header>
+
+    <!-- // end .section -->
+    <div class="section" id="features">
+
+        <div class="container" style="margin-bottom:80px;">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-6 scopri">
+                    <div class="box-icon"><span class="ti-mobile gradient-fill ti-3x"></span></div>
+                    <h2>Scopri TriviaPatente</h2>
+                    <p class="mb-4">Studiare per la patente B non è qualcosa di noioso, se fatto con noi! <i class="em em-man_dancing"></i></p>
+                    <a href="#download" class="btn btn-primary">Scarica</a>
+                </div>
+            </div>
+            <div class="perspective-phone">
+                <img src="images/perspective.jpg" alt="Dettagli in tempo reale" style="max-width: 100%;" class="img-fluid">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-flex align-items-center">
+                    <div class="full-width sfida">
+                        <div class="box-icon"><span class="ti-rocket gradient-fill ti-3x"></span></div>
+                        <h2>Sfida i tuoi amici</h2>
+                        <p class="mb-4">Prepararsi per un esame non è mai stato così competitivo <i class="em em-muscle"></i></p>
+                        <a href="javascript: return false;" class="btn btn-primary" onclick="inviteFriend()">Invita</a>
+                        <br />
+                        <div id="inviteCopiedContainer" class="hidden" >
+                          <input class="mt-4" id="copyInvite" value="Scarica anche tu TriviaPatente e prova a battermi https://www.triviapatente.it/#download"/>
+                          <button id="copyToClipboard" class="btn" type="button" data-clipboard-target="#copyInvite"/>
+                        </div>
+                        <p class="mt-4 hidden" id="inviteCopied">Un messaggio di invito è stato copiato negli appunti <i class="em em-heart_eyes"></i></p>
+                    </div>
+                </div>
+                <div class="col-md-6 align-items-center">
+                    <img src="images/rank.png" style="margin-top:80px; max-width: 70%;" alt="Classifica" class="img-fluid">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- // end .section -->
+
+
+    <div class="section light-bg" id="usage">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 d-flex align-items-center">
+                    <ul class="list-unstyled ui-steps">
+                        <li class="media">
+                            <div class="circle-icon mr-4">1</div>
+                            <div class="media-body">
+                                <h5>Crea un account</h5>
+                                <p>In questo modo i tuoi amici ti sfideranno, e tu gli dimostrerai chi comanda <i class="em em-wink"></i></p>
+                            </div>
+                        </li>
+                        <li class="media my-4">
+                            <div class="circle-icon mr-4">2</div>
+                            <div class="media-body">
+                                <h5>Inizia una nuova partita</h5>
+                                <p>Sfida conoscenti o perfetti sconosciuti in emozionanti sfide all'ultimo quiz! <i class="em em-sunglasses"></i></p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="circle-icon mr-4">3</div>
+                            <div class="media-body">
+                                <h5>Condividi il divertimento con i tuoi amici</h5>
+                                <p>Crediamo che si debba passare più tempo possibile con i propri amici, invitali a giocare, studiare in compagnia migliora l'apprendimento! <i class="em em-weight_lifter"></i></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/dualphone.png" alt="Partite recenti" class="img-fluid">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- // end .section -->
+
+
+    <div class="section light-bg pt-0" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <small>Sappiamo che apprezzi il bello, e noi abbiamo voluto offrirti il meglio <i class="em em-tropical_drink"></i></small>
+                <h4>Giudica da te <i class="em em-stuck_out_tongue_winking_eye"></i></h4>
+            </div>
+
+            <div class="img-gallery owl-carousel owl-theme">
+                <img src="images/screen1.png" alt="image" class="img-fluid">
+                <img src="images/screen2.png" alt="image" class="img-fluid">
+                <img src="images/screen3.png" alt="image" class="img-fluid">
+                <img src="images/screen4.png" alt="image" class="img-fluid">
+                <img src="images/screen5.png" alt="image" class="img-fluid">
+            </div>
+
+        </div>
+
+    </div>
+    <!-- // end .section -->
+
+    <div class="section bg-gradient" id="numbers">
+        <div class="container">
+            <div class="call-to-action no-margin">
+                <div class="row">
+                  <!-- Single Cool Fact-->
+                  <div class="col-12 col-md-4 col-lg-4">
+                      <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.6s">
+                          <div class="counter-area">
+                              <h1><span id="gamesCounter" class="counter">0</span></h1>
+                          </div>
+                          <div class="cool-facts-content">
+                              <h4 class="text-white ml-4 mt-2">PARTITE <br>GIOCATE</h4>
+                          </div>
+                      </div>
+                  </div>
+                    <!-- Single Cool Fact-->
+                    <div class="col-12 col-md-4 col-lg-4">
+                        <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="counter-area">
+                                <h1><span id="playersCounter" class="counter">0</span></h1>
+                            </div>
+                            <div class="cool-facts-content">
+                                <h4 class="text-white ml-4 mt-2">BETA <br> TESTER</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Cool Fact-->
+                    <div class="col-12 col-md-4 col-lg-4">
+                        <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.8s">
+                            <div class="counter-area">
+                                <h1><span id="inqueueCounter" class="counter">0</span></h1>
+                            </div>
+                            <div class="cool-facts-content">
+                                <h4 class="text-white ml-4 mt-2">UTENTI IN ATTESA <br>DEL RILASCIO</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section light-bg" id="testimonials">
+
+
+        <div class="container">
+
+            <div class="section-title">
+                <small>Ti piaceremo...</small>
+                <h3>Almeno quanto la <i class="em em-pizza"></i></h3>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <div class="card features">
+                        <div class="card-body">
+                            <div class="media">
+                                <span class="ti-face-smile gradient-fill ti-3x mr-3"></span>
+                                <div class="media-body">
+                                    <h4 class="card-title">Felicità</h4>
+                                    <p class="card-text">Abbiamo a cuore la vostra felicità, anche studiare la patente può essere divertente <i class="em em-yellow_heart"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="card features">
+                        <div class="card-body">
+                            <div class="media">
+                                <span class="ti-game gradient-fill ti-3x mr-3"></span>
+                                <div class="media-body">
+                                    <h4 class="card-title">Giocoso</h4>
+                                    <p class="card-text">Abbiamo pensato che non ci fosse nulla di meglio di una sfida al tuo compagno di banco! <i class="em em-wink"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="card features">
+                        <div class="card-body">
+                            <div class="media">
+                                <span class="ti-heart gradient-fill ti-3x mr-3"></span>
+                                <div class="media-body">
+                                    <h4 class="card-title">Utile</h4>
+                                    <p class="card-text">Prepararsi in compagnia ridurrà il tempo che impiegherai a studiare per la patente B <i class="em em-yum"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="section-title">
+                <small>TESTIMONIALS</small>
+                <h3>Cosa pensa chi ha provato TriviaPatente</h3>
+            </div>
+
+            <div class="testimonials owl-carousel">
+                <div class="testimonials-single">
+                    <img src="images/mattia.jpeg" alt="client" class="client-img">
+                    <blockquote class="blockquote">Con TriviaPatente senza accorgermene mi sono trovato a fare molti più quiz al giorno che con le altre app sulla patente.. Poi per me che preferivo decisamente fare altro..</blockquote>
+                    <!-- è stato incredibile -->
+                    <h5 class="mt-4 mb-2">Mattia</h5>
+                    <p class="text-primary">Studente</p>
+                </div>
+                <div class="testimonials-single">
+                    <img src="images/marco.jpeg" alt="client" class="client-img">
+                    <!-- La prima app per studiare la patente che ti nasconde quanto in realtà sia un'attività noiosa..  -->
+                    <blockquote class="blockquote">Per quanto non mi piacesse studiare e fare quiz, TriviaPatente mi ha aiutato a prepararmi per l'esame, permettendomi di sfidare i miei amici e persino divertirmi!</blockquote>
+                    <h5 class="mt-4 mb-2">Marco</h5>
+                    <p class="text-primary">Studente</p>
+                </div>
+                <div class="testimonials-single">
+                    <img src="images/riccardo.jpeg" alt="client" class="client-img">
+                    <!-- È un app in aggiornamento continuo, gli sviluppatori sono sempre disponibili a migliorarla ascoltando i consigli degli utenti. Per quanto riguarda il discorso gioco, niente da dire, semplicemente fantastica. -->
+                    <blockquote class="blockquote">Con TriviaPatente ti prepari nella metà del tempo, senza neanche sentire la fatica dello studio.</blockquote>
+                    <h5 class="mt-4 mb-2">Riccardo</h5>
+                    <p class="text-primary">Studente</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- // end .section -->
+
+    <div class="section bg-gradient" id="download">
+        <div class="container">
+            <div class="call-to-action">
+
+                <div class="box-icon"><span class="ti-mobile gradient-fill ti-3x"></span></div>
+                <h2>Vuoi giocare subito?</h2>
+                <p class="tagline">Ci stiamo assicurando che l'esperienza utente sia la migliore possibile, lasciaci la tua email per accedere alla beta dell'applicazione! <i class="em em-bell"></i></p>
+                <small></small>
+                <div class="m-lg">
+                    <form id="emailForm" action="javascript:saveEmail();return false;">
+                    <div class="input-group">
+                      <input type="email" autocomplete="off" id="interested" class="form-control" placeholder="Email" aria-label="La tua email" required>
+                      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary save-email">Invitami</button>
+                      </span>
+                    </div>
+                </form>
+                <div class="mt-4">
+                    <a href="javascript: return false;" class="btn btn-light btn-disabled"><img src="images/appleicon.png" alt="icon"> App Store</a>
+                    <a href="javascript: return false;" class="btn btn-light btn-disabled"><img src="images/playicon.png" alt="icon"> Google play</a>
+
+                </div>
+            </div>
+        </div>
+
+    </div></div>
+    <!-- // end .section -->
+
+    <div class="light-bg py-5" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 text-center text-lg-left">
+                    <p class="mb-2"> <span class="ti-heart mr-2"></span> Applicazione sviluppata da <b>Luigi Donadel • Antonio Terpin • Gabriel Ciulei</b></p>
+                    <div class=" d-block d-sm-inline-block">
+                        <p class="mb-2">
+                            <span class="ti-email mr-2"></span> <a class="mr-4" href="mailto:info@triviapatente.it">info@triviapatente.it</a>
+                        </p>
+                    </div>
+                    <!-- <div class="d-block d-sm-inline-block hidden">
+                        <p class="mb-0">
+                            <span class="ti-headphone-alt mr-2"></span> <a href="tel:51836362800">518-3636-2800</a>
+                        </p>
+                    </div> -->
+
+                </div>
+                <!-- <div class="col-lg-6 hidden">
+                    <div class="social-icons">
+                        <a href="#"><span class="ti-facebook"></span></a>
+                        <a href="#"><span class="ti-twitter-alt"></span></a>
+                        <a href="#"><span class="ti-instagram"></span></a>
+                    </div>
+                </div> -->
+            </div>
+
+        </div>
+
+    </div>
+    <!-- // end .section -->
+    <footer class="my-5 text-center">
+        <small>
+            <!-- <a href="#" class="m-2 hidden">PRESS</a> -->
+            <a href="https://triviapatente.it:8000/ws/terms" class="m-2">Termini e condizioni</a>
+            <a href="https://triviapatente.it:8000/ws/privacyPolicy" class="m-2">Privacy policy</a>
+        </small>
+        <!-- Copyright removal is not prohibited! -->
+        <!-- <p class="mb-2"><small>COPYRIGHT © 2017. ALL RIGHTS RESERVED. MOBAPP TEMPLATE BY <a href="https://colorlib.com">COLORLIB</a></small></p> -->
+        <p class="mb-2"><small>COPYRIGHT © 2017. ALL RIGHTS RESERVED.</small></p>
+    </footer>
+
+    <!-- jQuery and Bootstrap -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Plugins JS -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/countUp.js"></script>
+    <script src="js/noframework.waypoints.min.js"></script>
+    <script src="js/counters.js"></script>
+</body>
+
+</html>
