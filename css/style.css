@@ -79,7 +79,7 @@ h5 {
     margin-bottom: 0.7rem;
 }
 
-p {
+p, label, u {
     color: #959094;
 }
 
