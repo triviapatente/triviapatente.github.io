@@ -406,6 +406,7 @@ URI     : https://colorlib.com
     <script src="js/remodal.min.js"></script>
     <script src="js/noframework.waypoints.min.js"></script>
     <script src="js/counters.js"></script>
+    <script src="js/gdpr.js"></script>
 
     <div class="remodal" data-remodal-id="gdprget">
       <button data-remodal-action="close" class="remodal-close"></button>
@@ -415,18 +416,19 @@ URI     : https://colorlib.com
       </p>
       <p>Per ottenere i tuoi dati, inserisci le tue credenziali di accesso nel form qui sotto:</p>
       <br>
+      <p style="color: red" class="get-error input"></p>
       <br>
       <label for="get-email">Indirizzo email:</label>
       <br>
-      <input type="text" class="get-email" name="get-email">
+      <input type="text" class="get-email input" name="get-email">
       <br>
       <br>
       <label for="get-password">Password:</label>
       <br>
-      <input type="text" class="get-password" name="get-password">
+      <input type="text" class="get-password input" name="get-password">
       <br>
       <br>
-      <button data-remodal-action="confirm" class="remodal-confirm">Invia</button>
+      <button class="btn-primary get-confirm" onclick="get()">Invia</button>
     </div>
     <div class="remodal" data-remodal-id="gdprdrop">
       <button data-remodal-action="close" class="remodal-close"></button>
@@ -436,18 +438,19 @@ URI     : https://colorlib.com
       </p>
       <u>Nota: questa procedura eliminerà qualsiasi tuo dato (personale e non) registrato nel sistema, comprese statistiche di gioco e punteggio. L'operazione è irreversibile.</u>
       <br>
+      <p style="color: red" class="drop-error input"></p>
       <br>
-      <label for="get-email">Indirizzo email:</label>
+      <label for="drop-email">Indirizzo email:</label>
       <br>
-      <input type="text" class="get-email" name="get-email">
-      <br>
-      <br>
-      <label for="get-password">Password:</label>
-      <br>
-      <input type="text" class="get-password" name="get-password">
+      <input type="text" class="drop-email input" name="drop-email">
       <br>
       <br>
-      <button data-remodal-action="confirm" class="remodal-confirm">Invia</button>
+      <label for="drop-password">Password:</label>
+      <br>
+      <input type="text" class="drop-password input" name="drop-password">
+      <br>
+      <br>
+      <button class="btn-primary drop-confirm" onclick="drop()">Invia</button>
     </div>
     <div class="remodal" data-remodal-id="gdprrevoke">
       <button data-remodal-action="close" class="remodal-close"></button>
@@ -457,18 +460,19 @@ URI     : https://colorlib.com
       </p>
       <u>Nota: questa procedura eliminerà qualsiasi tuo dato (personale e non) registrato nel sistema, comprese statistiche di gioco e punteggio. L'operazione è irreversibile.</u>
       <br>
+      <p style="color: red" class="revoke-error input"></p>
       <br>
-      <label for="get-email">Indirizzo email:</label>
+      <label for="revoke-email">Indirizzo email:</label>
       <br>
-      <input type="text" class="get-email" name="get-email">
-      <br>
-      <br>
-      <label for="get-password">Password:</label>
-      <br>
-      <input type="text" class="get-password" name="get-password">
+      <input type="text" class="revoke-email input" name="revoke-email">
       <br>
       <br>
-      <button data-remodal-action="confirm" class="remodal-confirm">Invia</button>
+      <label for="revoke-password">Password:</label>
+      <br>
+      <input type="text" class="revoke-password input" name="revoke-password">
+      <br>
+      <br>
+      <button class="btn-primary revoke-confirm" onclick="revoke()">Invia</button>
     </div>
 </body>
 
