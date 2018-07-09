@@ -28,6 +28,9 @@ URI     : https://colorlib.com
     <link rel="stylesheet" href="css/themify-icons.css">
     <!-- Owl carousel -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- Remodal -->
+    <link rel="stylesheet" href="css/remodal.css">
+    <link rel="stylesheet" href="css/remodal-default-theme.css">
     <!-- Main css -->
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -350,7 +353,7 @@ URI     : https://colorlib.com
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 text-center text-lg-left">
-                    <p class="mb-2"> <span class="ti-heart mr-2"></span> Applicazione sviluppata da <b>Luigi Donadel • Antonio Terpin • Gabriel Ciulei</b></p>
+                    <p class="mb-2"> <span class="ti-heart mr-2"></span> Applicazione sviluppata da <b>Luigi Donadel • Gabriel Ciulei • Antonio Terpin</b></p>
                     <div class=" d-block d-sm-inline-block">
                         <p class="mb-2">
                             <span class="ti-email mr-2"></span> <a class="mr-4" href="mailto:info@triviapatente.it">info@triviapatente.it</a>
@@ -381,6 +384,10 @@ URI     : https://colorlib.com
             <!-- <a href="#" class="m-2 hidden">PRESS</a> -->
             <a href="https://triviapatente.it:8000/ws/terms" class="m-2">Termini e condizioni</a>
             <a href="https://triviapatente.it:8000/ws/privacyPolicy" class="m-2">Privacy policy</a>
+            <a href="#gdprget" class="m-2">Ottieni i tuoi dati</a>
+            <a href="#gdprrevoke" class="m-2">Revoca i permessi</a>
+            <a href="#gdprdrop" class="m-2">Cancella il tuo account</a>
+
         </small>
         <!-- Copyright removal is not prohibited! -->
         <!-- <p class="mb-2"><small>COPYRIGHT © 2017. ALL RIGHTS RESERVED. MOBAPP TEMPLATE BY <a href="https://colorlib.com">COLORLIB</a></small></p> -->
@@ -396,8 +403,40 @@ URI     : https://colorlib.com
     <script src="js/script.js"></script>
     <script src="js/clipboard.min.js"></script>
     <script src="js/countUp.js"></script>
+    <script src="js/remodal.min.js"></script>
     <script src="js/noframework.waypoints.min.js"></script>
     <script src="js/counters.js"></script>
+
+    <div class="remodal" data-remodal-id="gdprget">
+      <button data-remodal-action="close" class="remodal-close"></button>
+      <h1>Remodal</h1>
+      <p>
+        Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
+      </p>
+      <br>
+      <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+      <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+    </div>
+    <div class="remodal" data-remodal-id="gdprdrop">
+      <button data-remodal-action="close" class="remodal-close"></button>
+      <h1>Remodal</h1>
+      <p>
+        Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
+      </p>
+      <br>
+      <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+      <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+    </div>
+    <div class="remodal" data-remodal-id="gdprrevoke">
+      <button data-remodal-action="close" class="remodal-close"></button>
+      <h1>Remodal</h1>
+      <p>
+        Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
+      </p>
+      <br>
+      <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+      <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+    </div>
 </body>
 
 </html>
