@@ -2,7 +2,7 @@
 function login(emailSel, passSel, errorSel, tokencb) {
   email = $(emailSel).val();
   pass = $(passSel).val();
-  request("https://www.triviapatente.it:8080/auth/login", {"user": email, "password": pass}, null, function(success, data) {
+  request("https://www.triviapatente.it:8080/auth/login", {"user": email, "password": pass}, null, errorSel, function(success, data) {
     if(success) tokencb(data.token);
     else if(error.status == 400) {
       $(errorSel).val("Credenziali errate. Riprova");
@@ -95,7 +95,7 @@ function drop() {
 }
 function get() {
   login(".get-email", ".get-password", ".get-error", function(token) {
-    request("https://triviapatente.it:8080/gdpr/get-data", null, token, ".revoke-error", function(success, data) {
+    request("https://triviapatente.it:8080/gdpr/get-data", null, token, ".get-error", function(success, data) {
         reset(".get-email", ".get-error", ".get-confirm");
         alert(success)
     })
