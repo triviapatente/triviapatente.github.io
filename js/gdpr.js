@@ -4,11 +4,6 @@ function login(emailSel, passSel, errorSel, tokencb) {
   pass = $(passSel).val();
   request("https://www.triviapatente.it:8080/auth/login", {"user": email, "password": pass}, null, errorSel, function(success, data) {
     if(success) tokencb(data.token);
-    else if(error.status == 400) {
-      $(errorSel).val("Credenziali errate. Riprova");
-    } else {
-      $(errorSel).val("Errore sconosciuto. Riprova");
-    }
   })
 }
 $(document).ready(function() {
@@ -42,9 +37,9 @@ function request(url, params, token, errorSel, cb) {
          fail: function(error) {
            console.log(error);
            if(error.status == 400) {
-             $(errorSel).val("Credenziali errate. Riprova");
+             $(errorSel).html("Credenziali errate. Riprova");
            } else {
-             $(errorSel).val("Errore sconosciuto. Riprova");
+             $(errorSel).html("Errore sconosciuto. Riprova");
            }
            cb(false)
          }
@@ -55,18 +50,19 @@ function revoke() {
 }
 function reset(emailSel, errorSel, confirmSel) {
    $(".input").val("")
+   $(".input").html("")
    disableRetypePasswordMode(emailSel, errorSel, confirmSel);
 }
 var retypePasswordMode = false;
 var oldPassword = null
 function enableRetypePasswordMode(emailSel, passSel, errorSel, confirmSel, token) {
   $(errorSel).css("color", "black");
-  $(errorSel).val("Sei proprio sicuro di voler procedere? Per procedere, ridigita la tua password un'altra volta nel seguente campo.");
+  $(errorSel).html("Sei proprio sicuro di voler procedere? Per procedere, ridigita la tua password un'altra volta nel seguente campo.");
   $(emailSel).css("visibility", "hidden");
   retypePasswordMode = true;
   $(confirmSel).click(function() {
       if(oldPassword != $(passSel).val()) {
-        $(errorSel).val("Le due password non coincidono, riprova!")
+        $(errorSel).html("Le due password non coincidono, riprova!")
       }
       dropRequest(emailSel, errorSel, confirmSel, token);
   });
