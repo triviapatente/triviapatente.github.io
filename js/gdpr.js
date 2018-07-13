@@ -54,7 +54,7 @@ function reset(emailSel, errorSel, confirmSel) {
 var retypePasswordMode = false;
 var oldPassword = null
 function enableRetypePasswordMode(emailSel, passSel, errorSel, confirmSel, token) {
-  $(errorSel).css("color", "black");
+  $(errorSel).css("color", "");
   $(errorSel).html("Sei proprio sicuro di voler procedere? Per procedere, ridigita la tua password un'altra volta nel seguente campo.");
   $(emailSel).css("visibility", "hidden");
   $(passSel).val("");
@@ -84,8 +84,15 @@ function dropRequest(emailSel, errorSel, confirmSel, token) {
     request("https://triviapatente.it:8080/gdpr/drop-user", null, token, errorSel, function(success, data) {
       if(success) {
         reset(emailSel, errorSel, confirmSel);
+        if(emailSel == ".drop-email")
+          $(".drop-modal").remodal().close();
+        else
+          $(".revoke-modal").remodal().close();
+        $(".drop-success-modal").remodal().open();
+      } else {
+        disableRetypePasswordMode(emailSel, errorSel, confirmSel);
+        $(errorSel).html("Errore nella cancellazione nell'account. Riprova!");
       }
-      alert(success)
     });
 }
 function drop() {

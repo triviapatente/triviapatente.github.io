@@ -430,13 +430,14 @@ URI     : https://colorlib.com
       <br>
       <button class="btn-primary get-confirm" onclick="get()">Invia</button>
     </div>
-    <div class="remodal" data-remodal-id="gdprdrop">
+    <div class="remodal drop-modal" data-remodal-id="gdprdrop">
       <button data-remodal-action="close" class="remodal-close"></button>
       <h2>Cancella il tuo account</h2>
       <p>
          Perchè ti sei stancato di TriviaPatente? Se hai bisogno di informazioni aggiuntive sull'utilizzo del servizio, contatta l'assistenza all'indirizzo email <a class="mr-4" href="mailto:info@triviapatente.it">info@triviapatente.it</a><br>Se invece vuoi veramente cancellare il tuo account (sigh!), inserisci le tue credenziali qui sotto.
       </p>
       <u>Nota: questa procedura eliminerà qualsiasi tuo dato (personale e non) registrato nel sistema, comprese statistiche di gioco e punteggio. L'operazione è irreversibile.</u>
+      <br>
       <br>
       <p style="color: red" class="drop-error input"></p>
       <br>
@@ -452,13 +453,34 @@ URI     : https://colorlib.com
       <br>
       <button class="btn-primary drop-confirm" onclick="drop()">Invia</button>
     </div>
-    <div class="remodal" data-remodal-id="gdprrevoke">
+    <div class="remodal drop-success-modal" data-remodal-id="successdrop">
+      <button data-remodal-action="close" class="remodal-close"></button>
+      <h3>Cancellazione avvenuta.</h3>
+      <br>
+      <img src="images/cryiing_emojii.png" width=200 height=200/>
+      <br>
+      <br>
+      <p>
+         Ci dispiace troppo di esserci separati!
+      </p>
+      <p>
+         I tuoi dati sono stati completamente e definitivamente cancellati dal nostro sistema.
+      </p>
+      <p>
+         Speriamo di rivederci presto, eri uno dei nostri giocatori preferiti!
+      </p>
+      <br>
+
+      <button data-remodal-action="confirm" class="btn-primary ">Alla prossima!</button>
+    </div>
+    <div class="remodal revoke-modal" data-remodal-id="gdprrevoke">
       <button data-remodal-action="close" class="remodal-close"></button>
       <h2>Revoca i permessi</h2>
       <p>
         Per poter revocare i permessi di gestione dei tuoi dati personali a noi affidati tramite l'iscrizione al servizio, elimina il tuo account inserendo le tue credenziali di accesso nel form sottostante.
       </p>
       <u>Nota: questa procedura eliminerà qualsiasi tuo dato (personale e non) registrato nel sistema, comprese statistiche di gioco e punteggio. L'operazione è irreversibile.</u>
+      <br>
       <br>
       <p style="color: red" class="revoke-error input"></p>
       <br>
