@@ -35,7 +35,7 @@ function request(url, params, token, errorSel, cb) {
          headers: {"tp-session-token": token},
          success: function(data) { cb(true, data); },
          fail: function(error) {
-           console.log(error);
+           console.log("Errore richiesta", error);
            if(error.status == 400) {
              $(errorSel).html("Credenziali errate. Riprova");
            } else {
