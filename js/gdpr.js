@@ -93,6 +93,7 @@ function get() {
     request("https://triviapatente.it:8080/gdpr/get-data", null, token, ".get-error", function(success, data) {
         reset(".get-email", ".get-error", ".get-confirm");
         alert(success)
+        console.log(success, data);
     })
   });
 }
