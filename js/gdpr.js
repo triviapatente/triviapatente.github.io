@@ -117,6 +117,7 @@ function get() {
         reset(".get-email", ".get-error", ".get-confirm");
         if(success) {
            download(data);
+           $(".get-modal").remodal().close();
         } else {
            $(".get-error").html("Non è stato possibile scaricare i tuoi dati per un errore nel sistema. Riprova");
         }
