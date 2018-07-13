@@ -11,7 +11,6 @@ $(document).ready(function() {
     modalConfig(".revoke-email", ".revoke-password", ".revoke-confirm");
     modalConfig(".drop-email", ".drop-password", ".drop-confirm");
     $(document).on('opened', '.remodal', function () {
-        disableRetypePasswordMode(".get-email", ".get-error", ".get-confirm");
         disableRetypePasswordMode(".revoke-email", ".revoke-error", ".revoke-confirm");
         disableRetypePasswordMode(".drop-email", ".drop-error", ".drop-confirm");
     });
@@ -58,6 +57,8 @@ function enableRetypePasswordMode(emailSel, passSel, errorSel, confirmSel, token
   $(errorSel).css("color", "black");
   $(errorSel).html("Sei proprio sicuro di voler procedere? Per procedere, ridigita la tua password un'altra volta nel seguente campo.");
   $(emailSel).css("visibility", "hidden");
+  $(passSel).val("");
+  $(emailSel + "-label").css("visibility", "hidden");
   retypePasswordMode = true;
   $(confirmSel).click(function() {
       if(oldPassword != $(passSel).val()) {
@@ -67,8 +68,10 @@ function enableRetypePasswordMode(emailSel, passSel, errorSel, confirmSel, token
   });
 }
 function disableRetypePasswordMode(emailSel, errorSel, confirmSel) {
+  if(emailSel == ".get-email") return;
   $(errorSel).css("color", "red");
   $(emailSel).css("visibility", "visible");
+  $(emailSel + "-label").css("visibility", "visible");
   retypePasswordMode = false;
   $(confirmSel).click((confirmSel == ".revoke-confirm") ? revoke : drop);
 }
