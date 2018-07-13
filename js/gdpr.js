@@ -37,10 +37,11 @@ function request(url, params, token, errorSel, cb) {
       }).fail(function(xhr) {
         if(xhr.status == 400) {
           $(errorSel).html("Credenziali errate. Riprova");
-        } else {
+          cb(false);
+        } else if(xhr.status != 429) {
           $(errorSel).html("Errore sconosciuto. Riprova");
+          cb(false);
         }
-        cb(false)
       });
 }
 function revoke() {
