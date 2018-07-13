@@ -88,12 +88,27 @@ function dropRequest(emailSel, errorSel, confirmSel, token) {
 function drop() {
   loginAndDropRequest(".drop-email", ".drop-password", ".drop-error", ".drop-confirm");
 }
+function download(text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', "your-data.txt");
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
 function get() {
   login(".get-email", ".get-password", ".get-error", function(token) {
     request("https://triviapatente.it:8080/gdpr/get-data", null, token, ".get-error", function(success, data) {
         reset(".get-email", ".get-error", ".get-confirm");
-        alert(success)
-        console.log(success, data);
+        if(success) {
+           download(data);
+        } else {
+           $(".get-error").html("Non è stato possibile scaricare i tuoi dati per un errore nel sistema. Riprova");
+        }
     })
   });
 }
