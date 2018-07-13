@@ -55,7 +55,6 @@ function reset(emailSel, errorSel, confirmSel) {
 var retypePasswordMode = false;
 var oldPassword = null
 function enableRetypePasswordMode(emailSel, passSel, errorSel, confirmSel, token) {
-  $(errorSel).css("color", "");
   $(errorSel).html("Sei proprio sicuro di voler procedere? Per procedere, ridigita la tua password un'altra volta nel seguente campo.");
   $(emailSel).css("visibility", "hidden");
   $(passSel).val("");
@@ -70,7 +69,6 @@ function enableRetypePasswordMode(emailSel, passSel, errorSel, confirmSel, token
 }
 function disableRetypePasswordMode(emailSel, errorSel, confirmSel) {
   if(emailSel == ".get-email") return;
-  $(errorSel).css("color", "red");
   $(emailSel).css("visibility", "visible");
   $(emailSel + "-label").css("visibility", "visible");
   retypePasswordMode = false;
