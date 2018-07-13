@@ -32,17 +32,16 @@ function request(url, params, token, errorSel, cb) {
          url: url,
          data: params,
          type: "POST",
-         headers: {"tp-session-token": token},
-         success: function(data) { cb(true, data); },
-         fail: function(error) {
-           console.log("Errore richiesta", error);
-           if(error.status == 400) {
-             $(errorSel).html("Credenziali errate. Riprova");
-           } else {
-             $(errorSel).html("Errore sconosciuto. Riprova");
-           }
-           cb(false)
-         }
+         headers: {"tp-session-token": token}
+      }).done(function(data) {
+          cb(true, data);
+      }).fail(function(xhr) {
+        if(xhr.status == 400) {
+          $(errorSel).html("Credenziali errate. Riprova");
+        } else {
+          $(errorSel).html("Errore sconosciuto. Riprova");
+        }
+        cb(false)
       });
 }
 function revoke() {
