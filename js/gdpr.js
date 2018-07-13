@@ -4,12 +4,22 @@ function login(emailSel, passSel, errorSel, tokencb) {
   pass = $(passSel).val();
   request("https://www.triviapatente.it:8080/ws/auth/login", {"user": email, "password": pass}, null, function(success, data) {
     if(success) tokencb(data.token);
+    else if(error.status == 400) {
+      $(errorSel).val("Credenziali errate. Riprova");
+    } else {
+      $(errorSel).val("Errore sconosciuto. Riprova");
+    }
   })
 }
 $(document).ready(function() {
     modalConfig(".get-email", ".get-password", ".get-confirm");
     modalConfig(".revoke-email", ".revoke-password", ".revoke-confirm");
     modalConfig(".drop-email", ".drop-password", ".drop-confirm");
+    $(document).on('opened', '.remodal', function () {
+        disableRetypePasswordMode(".get-email", ".get-error", ".get-confirm");
+        disableRetypePasswordMode(".revoke-email", ".revoke-error", ".revoke-confirm");
+        disableRetypePasswordMode(".drop-email", ".drop-error", ".drop-confirm");
+    });
 });
 function modalConfig(emailSel, passSel, confirmSel) {
   $(confirmSel).css("visibility", "hidden");
@@ -41,27 +51,52 @@ function request(url, params, token, errorSel, cb) {
       });
 }
 function revoke() {
-  login(".revoke-email", ".revoke-password", ".revoke-error", function(token) {
-     request(":8080/gdpr/drop-user", null, token, ".revoke-error", function(success, data) {
-       alert(success)
-     })
+  loginAndDropRequest(".revoke-email", ".revoke-password", ".revoke-error", ".revoke-confirm");
+}
+function reset(emailSel, errorSel, confirmSel) {
+   $(".input").val("")
+   disableRetypePasswordMode(emailSel, errorSel, confirmSel);
+}
+var retypePasswordMode = false;
+var oldPassword = null
+function enableRetypePasswordMode(emailSel, passSel, errorSel, confirmSel, token) {
+  $(errorSel).css("color", "black");
+  $(errorSel).val("Sei proprio sicuro di voler procedere? Per procedere, ridigita la tua password un'altra volta nel seguente campo.");
+  $(emailSel).css("visibility", "hidden");
+  retypePasswordMode = true;
+  $(confirmSel).click(function() {
+      if(oldPassword != $(passSel).val()) {
+        $(errorSel).val("Le due password non coincidono, riprova!")
+      }
+      dropRequest(emailSel, errorSel, confirmSel, token);
   });
 }
-function reset() {
-   $(".input").val("")
+function disableRetypePasswordMode(emailSel, errorSel, confirmSel) {
+  $(errorSel).css("color", "red");
+  $(emailSel).css("visibility", "visible");
+  retypePasswordMode = false;
+  $(confirmSel).click((confirmSel == ".revoke-confirm") ? revoke : drop);
+}
+function loginAndDropRequest(emailSel, passSel, errorSel, confirmSel) {
+  login(emailSel, passSel, errorSel, function(token) {
+    enableRetypePasswordMode(emailSel, passSel, errorSel, confirmSel, token);
+  });
+}
+function dropRequest(emailSel, errorSel, confirmSel, token) {
+    request("https://triviapatente.it:8080/gdpr/drop-user", null, token, errorSel, function(success, data) {
+      if(success) {
+        reset(emailSel, errorSel, confirmSel);
+      }
+      alert(success)
+    });
 }
 function drop() {
-  login(".drop-email", ".drop-password", ".drop-error", function(token) {
-    request(":8080/gdpr/drop-user", null, token, ".revoke-error", function(success, data) {
-      reset();
-      alert(success)
-    })
-  });
+  loginAndDropRequest(".drop-email", ".drop-password", ".drop-error", ".drop-confirm");
 }
 function get() {
   login(".get-email", ".get-password", ".get-error", function(token) {
-    request(":8080/gdpr/get-data", null, token, ".revoke-error", function(success, data) {
-        reset();
+    request("https://triviapatente.it:8080/gdpr/get-data", null, token, ".revoke-error", function(success, data) {
+        reset(".get-email", ".get-error", ".get-confirm");
         alert(success)
     })
   });
