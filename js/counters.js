@@ -29,10 +29,6 @@ $(document).ready(function() {
     handler: function() {
       gamesCounter.start();
       playersCounter.start();
-      inqueueCounter.start();
-      //setInterval(function() { gamesCounter.update(getUpperLimit(1 / timeGames)); }, timeGames);
-      //setInterval(function() { playersCounter.update(getUpperLimit(1 / timePlayers)); }, timePlayers);
-      //setInterval(function() { inqueueCounter.update(getUpperLimit(1 / timeInqueue)); }, timeInqueue);
     },
     offset: $(window).height() - 200
   })
@@ -40,17 +36,9 @@ $(document).ready(function() {
 
 /*  COUNTERS
 ------------------------*/
-/*function getUpperLimit(seed) {
-  return 20 + (Date.now() - startingFrom) * seed;
-}
-
-var gamesCounter, playersCounter, inqueueCounter;
-var timeGames = 40 * 1000, timePlayers = 2 * 60 * 60 * 1000, timeInqueue = 7 * 60 * 1000;*/
-
 function initCounters() {
-  gamesCounter = new CountUp("gamesCounter", 0, /*getUpperLimit(1 / timeGames)*/1435, 0, 3);
-  playersCounter = new CountUp("playersCounter", 0, /*getUpperLimit(1 / timePlayers)*/52, 0, 3);
-  inqueueCounter = new CountUp("inqueueCounter", 0, /*getUpperLimit(1 / timeInqueue)*/121, 0, 3);
+  gamesCounter = new CountUp("gamesCounter", 0, 1435, 0, 3);
+  playersCounter = new CountUp("playersCounter", 0, 103, 0, 3);
 }
 
 /*  CLIPBOARD
